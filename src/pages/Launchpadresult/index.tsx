@@ -1,8 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios"; // Make sure to import axios
+import { formData } from '../Launchpad/index';
 
 import { Button, Img, List, Text } from "components";
 
-const LaunchpadresultPage: React.FC = () => {
+
+
+
+  const LaunchpadresultPage: React.FC = () => {
+    const {
+      newProjectName,
+      newLogoFile,
+      newProjectDescription,
+      walletAddresses,
+      selectedIncubationOption,
+      selectedDashboardOption,
+      selectedMilestoneOption,
+      selectedCurrencies,
+      selectedChains,
+      selectedDaoOption,
+    } = formData;
+
   return (
     <>
       <div className="bg-black-900 flex flex-col font-raleway items-start justify-start mx-auto p-[76px] md:px-10 sm:px-5 w-full">
@@ -50,55 +68,28 @@ const LaunchpadresultPage: React.FC = () => {
                     className="capitalize text-base text-white-A700_e5 tracking-[0.80px] w-auto"
                     size="txtRalewayRomanMedium16WhiteA700e5"
                   >
-                    name{" WeFund"}
+                    name  :  {newProjectName}
                   </Text>
                   <Text
                     className="capitalize text-base text-white-A700_e5 tracking-[0.80px] w-auto"
                     size="txtRalewayRomanMedium16WhiteA700e5"
                   >
-                    logo
+                    logo  :   {newLogoFile}
                   </Text>
                   <Text
                     className="capitalize text-base text-white-A700_e5 tracking-[0.80px] w-auto"
                     size="txtRalewayRomanMedium16WhiteA700e5"
                   >
-                    description
+                    description : {newProjectDescription}
                   </Text>
                   <Text
                     className="capitalize text-base text-white-A700_e5 tracking-[0.80px] w-auto"
                     size="txtRalewayRomanMedium16WhiteA700e5"
                   >
-                    wallet
+                    wallet.  :    {walletAddresses}
                   </Text>
                 </div>
-                <div className="flex flex-1 flex-col gap-4 items-start justify-start w-full">
-                  <Text
-                    className="capitalize text-base text-white-A700_e5 tracking-[0.80px] w-auto"
-                    size="txtRalewayRomanMedium16WhiteA700e5"
-                  >
-                    WeFund
-                  </Text>
-                  <div className="bg-white-A700_19 border border-dashed border-white-A700_e5 flex flex-col items-start justify-start px-4 py-1 rounded-lg w-auto">
-                    <Text
-                      className="capitalize text-sm text-white-A700 tracking-[0.70px] w-auto"
-                      size="txtRalewayRomanSemiBold14"
-                    >
-                      logo.png
-                    </Text>
-                  </div>
-                  <Text
-                    className="capitalize text-base text-white-A700_e5 tracking-[0.80px] w-auto"
-                    size="txtRalewayRomanMedium16WhiteA700e5"
-                  >
-                    description.........
-                  </Text>
-                  <Text
-                    className="capitalize text-base text-white-A700_e5 tracking-[0.80px] w-auto"
-                    size="txtRalewayRomanMedium16WhiteA700e5"
-                  >
-                    MetaMask
-                  </Text>
-                </div>
+               
               </div>
               <Button className="bg-green-400_7f capitalize cursor-pointer font-inter min-w-[175px] py-2.5 rounded-lg text-center text-white-A700_e5 text-xs tracking-[0.60px]">
                 These values are correct
@@ -129,35 +120,30 @@ const LaunchpadresultPage: React.FC = () => {
                   >
                     launchpad setting
                   </Text>
+                 
                   <Text
                     className="capitalize text-base text-white-A700_e5 tracking-[0.80px] w-auto"
                     size="txtRalewayRomanMedium16WhiteA700e5"
                   >
-                    wallet voting power
+                    Incubation : {selectedIncubationOption}
                   </Text>
                   <Text
                     className="capitalize text-base text-white-A700_e5 tracking-[0.80px] w-auto"
                     size="txtRalewayRomanMedium16WhiteA700e5"
                   >
-                    incubation needed
+                  Dashboard : {selectedDashboardOption}
                   </Text>
                   <Text
                     className="capitalize text-base text-white-A700_e5 tracking-[0.80px] w-auto"
                     size="txtRalewayRomanMedium16WhiteA700e5"
                   >
-                    generate dashboard
+                  Milestone :  {selectedMilestoneOption}
                   </Text>
                   <Text
                     className="capitalize text-base text-white-A700_e5 tracking-[0.80px] w-auto"
                     size="txtRalewayRomanMedium16WhiteA700e5"
                   >
-                    milestone needed
-                  </Text>
-                  <Text
-                    className="capitalize text-base text-white-A700_e5 tracking-[0.80px] w-auto"
-                    size="txtRalewayRomanMedium16WhiteA700e5"
-                  >
-                    currency
+                   Currencty: {selectedCurrencies}
                   </Text>
                   <Text
                     className="capitalize text-base text-white-A700_e5 tracking-[0.80px] w-auto"
@@ -165,17 +151,12 @@ const LaunchpadresultPage: React.FC = () => {
                   >
                     selected deploy
                   </Text>
+                 
                   <Text
                     className="capitalize text-base text-white-A700_e5 tracking-[0.80px] w-auto"
                     size="txtRalewayRomanMedium16WhiteA700e5"
                   >
-                    deploy option
-                  </Text>
-                  <Text
-                    className="capitalize text-base text-white-A700_e5 tracking-[0.80px] w-auto"
-                    size="txtRalewayRomanMedium16WhiteA700e5"
-                  >
-                    chain selection
+                   - {selectedChains}
                   </Text>
                 </div>
                 <div className="flex flex-1 flex-col gap-4 items-start justify-start w-full">
@@ -183,56 +164,12 @@ const LaunchpadresultPage: React.FC = () => {
                     className="capitalize text-base text-white-A700_e5 tracking-[0.80px] w-auto"
                     size="txtRalewayRomanMedium16WhiteA700e5"
                   >
-                    centralied
+                  Status : {selectedDaoOption}
                   </Text>
-                  <Text
-                    className="capitalize text-base text-white-A700_e5 tracking-[0.80px] w-auto"
-                    size="txtRalewayRomanMedium16WhiteA700e5"
-                  >
-                    1
-                  </Text>
-                  <Text
-                    className="capitalize text-base text-white-A700_e5 tracking-[0.80px] w-auto"
-                    size="txtRalewayRomanMedium16WhiteA700e5"
-                  >
-                    yes
-                  </Text>
-                  <Text
-                    className="capitalize text-base text-white-A700_e5 tracking-[0.80px] w-auto"
-                    size="txtRalewayRomanMedium16WhiteA700e5"
-                  >
-                    selected
-                  </Text>
-                  <Text
-                    className="capitalize text-base text-white-A700_e5 tracking-[0.80px] w-auto"
-                    size="txtRalewayRomanMedium16WhiteA700e5"
-                  >
-                    yes
-                  </Text>
-                  <Text
-                    className="capitalize text-base text-white-A700_e5 tracking-[0.80px] w-auto"
-                    size="txtRalewayRomanMedium16WhiteA700e5"
-                  >
-                    USDT / USDC
-                  </Text>
-                  <Text
-                    className="capitalize text-base text-white-A700_e5 tracking-[0.80px] w-auto"
-                    size="txtRalewayRomanMedium16WhiteA700e5"
-                  >
-                    network
-                  </Text>
-                  <Text
-                    className="capitalize text-base text-white-A700_e5 tracking-[0.80px] w-auto"
-                    size="txtRalewayRomanMedium16WhiteA700e5"
-                  >
-                    single chain
-                  </Text>
-                  <Text
-                    className="capitalize text-base text-white-A700_e5 tracking-[0.80px] w-full"
-                    size="txtRalewayRomanMedium16WhiteA700e5"
-                  >
-                    BSC mainnet
-                  </Text>
+                
+                 
+                
+                 
                 </div>
               </List>
               <Button className="bg-green-400_7f capitalize cursor-pointer font-inter min-w-[175px] py-2.5 rounded-lg text-center text-white-A700_e5 text-xs tracking-[0.60px]">

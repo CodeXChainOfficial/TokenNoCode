@@ -60,7 +60,8 @@ const Header: React.FC<HeaderProps> = (props) => {
               </Text>
             </li>
           </ul>
-          <Button className="bg-gradient1  capitalize cursor-pointer font-raleway font-semibold min-w-[160px] py-[11px] rounded text-base text-center text-white-A700 tracking-[0.80px]">
+          <Button className="bg-gradient1  capitalize cursor-pointer font-raleway font-semibold min-w-[160px] py-[11px] rounded text-base text-center text-white-A700 tracking-[0.80px] hover:bg-green-400_7f"
+          >
             connect wallet
           </Button>
         </div>

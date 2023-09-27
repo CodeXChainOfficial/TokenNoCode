@@ -288,7 +288,6 @@ const HomepagecodexappOnePage: React.FC = () => {
                 <Text
                   className="common-pointer"
                   size="txtRalewayRomanSemiBold16Lightblue500"
-                  onClick={() => navigate("/createprojectright")}
                 >
                   see all
                 </Text>

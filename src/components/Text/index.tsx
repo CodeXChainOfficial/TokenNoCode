@@ -66,32 +66,18 @@ const sizeClasses = {
   txtRalewayItalicRegular16: "font-normal font-raleway italic",
 } as const;
 
-export type TextProps = Partial<{
-  className: string;
-  size: keyof typeof sizeClasses;
-  as: React.ElementType;
-}> &
-  React.DetailedHTMLProps<
-    React.HTMLAttributes<HTMLSpanElement>,
-    HTMLSpanElement
-  >;
+export type TextProps = {
+  className?: string;
+  size?: keyof typeof sizeClasses;
+};
 
-const Text: React.FC<React.PropsWithChildren<TextProps>> = ({
-  children,
-  className = "",
-  size,
-  as,
-  ...restProps
-}) => {
-  const Component = as || "p";
-
+const Text: React.FC<TextProps> = ({ children, className = "", size, ...restProps }) => {
+  const dynamicClassName = size ? sizeClasses[size] : "";
+  
   return (
-    <Component
-      className={`text-left ${className} ${size && sizeClasses[size]}`}
-      {...restProps}
-    >
+    <p className={`text-left ${className} ${dynamicClassName}`} {...restProps}>
       {children}
-    </Component>
+    </p>
   );
 };
 
