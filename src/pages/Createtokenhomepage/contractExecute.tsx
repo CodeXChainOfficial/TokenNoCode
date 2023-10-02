@@ -17,7 +17,7 @@ const INPUT_PROPS = {
   tokenSymbol: {
     typeText: 'text',
     type: 'text',
-    placeholder: 'ex. shiba',
+    placeholder: 'ex. tut',
   },
   tokenSupply: {
     typeText: 'text',

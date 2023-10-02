@@ -14,7 +14,11 @@
       "moduleResolution": "node",
       "isolatedModules": true,
       "allowSyntheticDefaultImports": true,
-      "skipLibCheck": true
+      "skipLibCheck": true,
+      "resolveJsonModule": true
+
     },
     "include": ["src"], 
+    "types": ["web3", "ethers"],
+
   }

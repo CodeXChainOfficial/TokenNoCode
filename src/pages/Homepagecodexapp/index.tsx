@@ -380,7 +380,7 @@ const HomepagecodexappPage: React.FC = () => {
             
             <div
         className="common-pointer absolute bg-black-900_01 bottom-[-51%] flex flex-col font-raleway gap-4 items-start justify-start left-[5%] p-8 sm:px-5 rounded-lg w-[620px] md:w-full hover:bg-green-400_7f"
-        onClick={() => navigate("/")}
+        onClick={() => navigate("/createtoken")}
             >
               <div className="flex flex-row gap-4 items-center justify-start w-auto">
                 <Text

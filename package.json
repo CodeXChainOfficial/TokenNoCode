@@ -4,6 +4,9 @@
   "private": true,
   "dependencies": {
     "@dhiwise/react-switch": "^1.0.2",
+    "@ethersproject/providers": "^5.7.2",
+    "@metamask/detect-provider": "^2.0.0",
+    "@openzeppelin/contracts": "^4.9.3",
     "@reduxjs/toolkit": "^1.9.6",
     "@tailwindcss/forms": "0.4.0",
     "@tanstack/react-table": "^8.5.30",
@@ -16,7 +19,10 @@
     "cors": "^2.8.5",
     "crypto": "npm:crypto-browserify",
     "crypto-browserify": "^3.12.0",
+    "ethereumjs-tx": "^2.1.2",
+    "ethers": "^6.7.1",
     "express": "^4.18.2",
+    "global": "^4.4.0",
     "https-browserify": "^1.0.0",
     "multer": "^1.4.5-lts.1",
     "os-browserify": "^0.3.0",
@@ -36,10 +42,11 @@
     "stream": "npm:stream-browserify",
     "stream-browserify": "^3.0.0",
     "stream-http": "^3.2.0",
+    "tronbox": "^3.4.0",
     "tronweb": "^5.3.0",
     "url": "^0.11.0",
     "web-vitals": "^2.1.2",
-    "web3": "^1.6.1",
+    "web3": "1.10.0",
     "webpack": "4",
     "webpack-dev-server": "3"
   },
@@ -83,5 +90,6 @@
   "main": "config-overrides.js",
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": "https://github.com/WeFundOfficial/No-Code-Dapp.git"
 }

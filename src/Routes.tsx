@@ -186,14 +186,30 @@ const Launchpadchoosewallet = React.lazy(
 );
 const Launchpad = React.lazy(() => import("pages/Launchpad"));
 const Createtokenhomepage = React.lazy(
-  () => import("pages/Createtokenhomepage"),
+  () => import("pages/Createtokenhomepage") as Promise<{
+    default: React.ComponentType<any>;
+  }>
 );
+const CreatetokenhomepageBNB = React.lazy(
+  () => import("pages/Createtokenhomepage/BEP20") as Promise<{
+    default: React.ComponentType<any>;
+  }>
+);
+const TokenDeploymentForm = React.lazy(
+  () => import("pages/Createtokenhomepage/TRC20") as Promise<{
+    default: React.ComponentType<any>;
+  }>
+);
+
 const ProjectRoutes = () => {
   return (
     <React.Suspense fallback={<>Loading...</>}>
       <Router>
         <Routes>
-          <Route path="/" element={<Createtokenhomepage />} />
+          <Route path="/createtoken" element={<Createtokenhomepage />} />
+          <Route path="/createtokenbnb" element={<CreatetokenhomepageBNB />} />
+          <Route path="/createtokentrc" element={<TokenDeploymentForm />} />
+
           <Route path="*" element={<NotFound />} />
           <Route path="/launchpad" element={<Launchpad />} />
           <Route
