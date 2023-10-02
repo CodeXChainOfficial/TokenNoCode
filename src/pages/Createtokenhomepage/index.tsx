@@ -101,7 +101,7 @@ const networkOptions = {
           },
           {
             label: 'Arthera-TestNet',
-            chainId: '0x10243', // Ethereum Mainnet
+            chainId: '0x2803', // Arthera Testnet 
             rpcUrl: 'https://rpc-test.arthera.net',
           },
           {
